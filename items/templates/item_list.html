@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <h1>Item List</h1>
+    <ul>
+      {% for item in items %}
+      <li>
+        <strong>{{item.name}}</strong>
+        <p>{{item.description}}</p>
+        <p>Price: ${{item.price}}</p>
+      </li>
+      {% empty %}
+      <p>No items are avaliable at the moment.</p>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
